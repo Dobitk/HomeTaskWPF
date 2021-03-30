@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="OneResourses.cs" />
+    <Compile Remove="OneResurse.cs" />
+    <Compile Remove="UserClass\ITimeClass.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resource.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="HomeTask2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="288" Width="805">
+
+    <Grid Margin="0,0,0,4" Loaded="Grid_Loaded">
+
+        <Button Content="Button" Name="Start" HorizontalAlignment="Left" Margin="7,183,0,0" VerticalAlignment="Top" Height="55" Width="395" Click="Start_Click" FontSize="20"/>
+        <Button Content="Button" Name="Stop" HorizontalAlignment="Left" Margin="402,183,0,0" VerticalAlignment="Top" Height="55" Width="398" RenderTransformOrigin="0.498,0.564" Click="Stop_Click" FontSize="20"/>
+        <Label Content="{DynamicResource one}"  Name="OneExecutor" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="250" HorizontalContentAlignment="Center"/>
+        <Label Content="{DynamicResource two}" Name="TwoExecutor" HorizontalAlignment="Left" Margin="270,80,0,0" VerticalAlignment="Top" Width="250" HorizontalContentAlignment="Center"/>
+        <Label Content="{DynamicResource three}" Name="ThreeExecutor" HorizontalAlignment="Left" Margin="534,80,0,0" VerticalAlignment="Top" Width="250" HorizontalContentAlignment="Center"/>
+        <Label Content="{DynamicResource OneMachine}" Name="OneMachine" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="250" FontSize="20" HorizontalContentAlignment="Center"/>
+        <Label Content="{DynamicResource TwoMachine}" Name="TwoMachine" HorizontalAlignment="Left" Margin="270,40,0,0" VerticalAlignment="Top" Width="250" FontSize="20" HorizontalContentAlignment="Center"/>
+        <Label Content="{DynamicResource ThreeMachine}" Name="ThreeMachine" HorizontalAlignment="Left" Margin="534,40,0,0" VerticalAlignment="Top" Width="250" FontSize="20" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>

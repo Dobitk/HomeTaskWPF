@@ -3,7 +3,7 @@ using System.Windows;
 
 namespace HomeTask2.UserClass
 {
-    public class RunThreeResuorce 
+    public class RunThreeResuorce : ThreeResuorce
     {
         public string s { get; set; }
 
@@ -11,14 +11,8 @@ namespace HomeTask2.UserClass
         {
             s = ss;
             Application.Current.Resources[resuorce] = "Ресурс 3";
-            var threePerformer = new ThreeResuorce();
-            threePerformer.OnCountProcess += StartThree_OnCountProcess;
-            threePerformer.OneWorkResurseThree(oneTime, twoTime, threeTime, performer, ss, resuorce);
+            OneWorkResuorceThree(oneTime, twoTime, threeTime, performer, ss, resuorce);
         }
 
-         private void StartThree_OnCountProcess(object sender, CountUpEvent e)
-        {
-            Application.Current.Resources[s] = e._resultat.ToString();
-        }
     }
 }

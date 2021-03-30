@@ -1,16 +1,15 @@
 ﻿using HomeTask2.UserClass;
 using System;
 using System.Threading;
+using System.Windows;
 
 
 namespace HomeTask2.UserClass
 {
-
-    public class OneResuorce : EventClass
+    public class OneResuorce
     {
-       public void CountUp(int one, int two,int three , int performer, string ss, string resuorce)
+       private void CountUp(int one, int two,int three , int performer, string ss, string resuorce)
         {
-            bool f = false;
             string dd;
             RunTwoResuorce runTwoResuorce = new RunTwoResuorce();
             try
@@ -21,44 +20,38 @@ namespace HomeTask2.UserClass
                 while (i != one)
                 {
                     dd = "занят исполнителем " + performer.ToString() + "    " + sec.ToString() + "сек.";
-                    Process(dd);
-                    
-
-                    f = true;
+                    Application.Current.Resources[ss] = dd;
                     Thread.Sleep(1000);
                     sec--;
                     i++;
                 }
-
-                f = false;
             }
+#pragma warning disable CS0168
             catch (Exception e)
             {
+#pragma warning disable SYSLIB0006
                 thread.Abort();
             }
             finally
             {
               dd = "свободен";
-              Process(dd);
-              Thread.Sleep(1000);
+              Application.Current.Resources[ss] = dd;
+                Thread.Sleep(1000);
               if (!ExitClass.exit)
               {
                   runTwoResuorce.AllTwoPerformer(one, two, three, performer, ss, resuorce);
-
               }
             }
         }
 
         private Thread thread = null;
 
-        public  void OneWorkResurse(int oneTime, int twoTime, int threeTime, int performer, string ss, string resuorce)
+        public  void OneWorkResuorce(int oneTime, int twoTime, int threeTime, int performer, string ss, string resuorce)
         {
             thread = new Thread(new ParameterizedThreadStart((obj) => CountUp(oneTime, twoTime, threeTime, performer, ss, resuorce)));
             thread.IsBackground = true;
             thread.Start();
-      
         }
-
     }
 
 

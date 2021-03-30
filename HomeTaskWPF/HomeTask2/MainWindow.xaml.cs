@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using HomeTask2.Common;
 using HomeTask2.UserClass;
 
 namespace HomeTask2
@@ -10,7 +11,7 @@ namespace HomeTask2
     /// </summary>
     public partial class MainWindow : Window
     {
-        public StartClass _IAbstract { get; set; }
+        public IStartClass _IAbstract { get; set; }
 
        
         public MainWindow()
@@ -23,12 +24,15 @@ namespace HomeTask2
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             ExitClass.exit = false;
-            StartClass runone = new RunOneResuorce();
-            StartClass runtwo = new RunOneResuorce();
-            StartClass runthree = new RunOneResuorce();
+            IStartClass runone = new RunOneResuorce();
+            IStartClass runtwo = new RunOneResuorce();
+            IStartClass runthree = new RunOneResuorce();
 
+            //Запускаем первого исполнителя(время, время, время, исполнитель,имя динамической переменной,имя динамической переменной) 
             runone.AllOnePerformer(5, 3, 1, 1, "one", "OneMachine");
+            //Запускаем второго исполнителя (Параметры теже)
             runtwo.AllOnePerformer(3, 3, 3, 2, "two", "TwoMachine");
+            //Запускаем третьего иполнителя (Параметры теже)
             runthree.AllOnePerformer(1, 3, 5, 3, "three", "ThreeMachine");
 
             this.Start.IsEnabled = false;
@@ -54,10 +58,12 @@ namespace HomeTask2
             this.Stop.IsEnabled = false;
             this.ResizeMode = ResizeMode.NoResize;
             this.Title = "Домашняя работа №2";
-            double screenHeight = SystemParameters.FullPrimaryScreenHeight;
-            double screenWidth = SystemParameters.FullPrimaryScreenWidth;
-            this.Top = (screenHeight - this.ActualHeight) / 2;
-            this.Left = (screenWidth - this.ActualWidth) / 2;
+            // Центрация формы по центру
+            FormCentre.CentreForm(this);
+
+            Application.Current.Resources["one"] = "Свободен";
+            Application.Current.Resources["two"] = "Свободен";
+            Application.Current.Resources["three"] = "Свободен";
         }
     }
 }

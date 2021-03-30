@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace HomeTask2.UserClass
 {
-    public class RunTwoResuorce
+    public class RunTwoResuorce : TwoResuorce
     {
         public string s { get; set; }
 
@@ -15,16 +15,8 @@ namespace HomeTask2.UserClass
         {
             s = ss;
             Application.Current.Resources[resuorce] = "Ресурс 2";
-            var twoPerformer = new TwoResuorce();
-            twoPerformer.OnCountProcess += StartTwo_OnCountProcess;
-            twoPerformer.OneWorkResurseTwo(oneTime, twoTime, threeTime, performer, ss, resuorce);
-         }
-
-
- 
-        private void StartTwo_OnCountProcess(object sender, CountUpEvent e)
-        {
-            Application.Current.Resources[s] = e._resultat.ToString();
+            OneWorkResuorceTwo(oneTime, twoTime, threeTime, performer, ss, resuorce);
         }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeTask2.UserClass
 {
-    public interface StartClass
+    public interface IStartClass
     {
 
         void AllOnePerformer(int oneTime, int twoTime, int threeTime, int performer, string ss, string resuorce);
